@@ -6,7 +6,6 @@
 **/build/
 
 # environment files
-**/.env
 
 # logs
 *.log
