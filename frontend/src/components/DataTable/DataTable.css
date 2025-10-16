@@ -1,0 +1,456 @@
+.data-table-container {
+  height: 100%;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.data-table-container h3 {
+  margin: 0 0 1.5rem 0;
+  color: #333;
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  max-height: calc(100vh - 300px);
+  padding-bottom: 0.5rem;
+}
+
+.table-responsive::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.add-new-button {
+  display: flex;
+  justify-content: flex-start;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-new-button:hover {
+  background-color: #0056b3;
+}
+
+.add-new-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* .new-row-form {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 6px;
+  margin: 16px 0 24px 0;
+  border: 1px solid #e9ecef;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+} */
+
+.new-row-form h4 {
+  margin: 0 0 16px 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.new-row-form .form-fields {
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   gap: 16px; 
+   margin-right: 10px;
+}
+
+.new-row-form .form-field {
+  margin-bottom: 12px 10px;
+}
+
+.new-row-form label {
+  display: block;
+  margin-bottom: 6px;
+  color: #555;
+  font-weight: 500;
+}
+
+.new-row-form input {
+  height: 32px;
+  padding: 4px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  transition: border-color 0.2s;
+  justify-content: space-between;
+}
+
+.new-row-form input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+.form-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 12px; 
+  margin-top: 16px;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 100%;
+}
+
+.form-actions button {
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.form-actions button:first-child {
+  background-color: #28a745;
+  color: white;
+  border: none;
+}
+
+.form-actions button:first-child:hover {
+  background-color: #218838;
+}
+
+.form-actions button:last-child {
+  background-color: transparent;
+  color: #6c757d;
+  border: 1px solid #6c757d;
+}
+
+.form-actions button:last-child:hover {
+  background-color: #6c757d;
+  color: white;
+}
+
+.data-table tr.new-row {
+  background-color: #f8f9fa;
+  height: 40px;  /* Reduced height for new rows */
+}
+
+.data-table tr.new-row td {
+  padding: 4px 8px;  /* Reduced padding for new row cells */
+}
+
+.data-table th,
+.data-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  border-right: 1px solid #e9ecef;
+}
+
+.data-table th:last-child,
+.data-table td:last-child {
+  border-right: none;
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  text-align: left;
+  color: #495057;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.data-table tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.data-table tr:hover {
+  background-color: #f2f2f2;
+  transition: background-color 0.2s ease;
+}
+
+.data-table input {
+  width: calc(100% - 1rem);
+  padding: 0.5rem 0.75rem;
+  border: 2px solid #e9ecef;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.data-table input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  background-color: #fff;
+}
+
+.new-row-form {
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border: 1px solid #e9ecef;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.new-row-form h4 {
+  margin: 0 0 1rem 0;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.form-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 0.5rem;
+}
+
+.form-field input {
+  padding: 0.5rem 0.75rem;
+  border: 2px solid #e9ecef;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.form-field input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.input-container input.invalid {
+  border-color: #dc3545;
+  background-color: #fff8f8;
+}
+
+.validation-error {
+  color: #dc3545;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  position: absolute;
+  background: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid #dc3545;
+  z-index: 1;
+}
+
+.form-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.form-actions button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.form-actions button:first-child {
+  background-color: #28a745;
+  color: white;
+}
+
+.form-actions button:first-child:hover {
+  background-color: #218838;
+}
+
+.form-actions button:first-child:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.form-actions button:last-child {
+  background-color: #dc3545;
+  color: white;
+}
+
+.form-actions button:last-child:hover {
+  background-color: #c82333;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* .table-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+} */
+
+
+.add-new-button {
+  padding: 0.5rem 1rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.add-new-button:hover {
+  background-color: #218838;
+}
+
+.add-new-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.action-buttons button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.action-buttons button:first-child {
+  background-color: #28a745;
+  color: white;
+}
+
+.action-buttons button:first-child:hover {
+  background-color: #218838;
+  transform: translateY(-1px);
+}
+
+.action-buttons button:last-child {
+  background-color: #dc3545;
+  color: white;
+}
+
+.action-buttons button:last-child:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding: 1rem 0;
+  border-top: 1px solid #e9ecef;
+}
+
+.pagination-button {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.pagination-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.pagination-button:not(:disabled):hover {
+  background-color: #0056b3;
+}
+
+.pagination-info {
+  color: #666;
+  font-size: 0.9rem;
+}

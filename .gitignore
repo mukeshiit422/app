@@ -1,0 +1,13 @@
+# Ignore all node_modules folders recursively
+**/node_modules/
+
+# build outputs
+**/dist/
+**/build/
+
+# environment files
+**/.env
+
+# logs
+*.log
+yarn-error.log*
